@@ -114,8 +114,8 @@ foreach my $entry (sort { $a->{name} cmp $b->{name} } @{ $json->{queues}}) {
    
 $workbook->close();
 
+# Some old stuff to be removed
 	# foreach my $key (keys %$p) {
-	
 	
 		# my $array_num = 0;
 		# print  "$p->{'users'}[$array_num]{name}\n";
