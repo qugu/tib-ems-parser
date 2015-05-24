@@ -33,6 +33,7 @@ my $queues_ws = $workbook->add_worksheet('Queues');
 
 $users_ws->write ( 0, 0, 'Username', $format1);
 $users_ws->write ( 0, 1, 'Description from EMS', $format1 );
+
 $topics_ws->write ( 0, 0, 'Name', $format1 ); 
 $topics_ws->write ( 0, 1, 'Store', $format1 );
 $topics_ws->write ( 0, 2, 'Trace', $format1 );
@@ -72,7 +73,7 @@ foreach my $entry ( sort { $a->{name} cmp $b->{name} } @{ $json->{users}}) {
    
    }
    
-# Reset row var for xls
+# Reset row variable for new iterations
 $row = 1;
 
 # Iterate through topics
@@ -98,7 +99,7 @@ foreach my $entry (sort { $a->{name} cmp $b->{name} } @{ $json->{topics}}) {
 # Reset row var for xls
 $row = 1;
 
-# Iterate through topics
+# Iterate through queues
 foreach my $entry (sort { $a->{name} cmp $b->{name} } @{ $json->{queues}}) {
    my $field1 = $entry->{'name'};
    my $field2 = $entry->{'store'};
@@ -119,12 +120,3 @@ foreach my $entry (sort { $a->{name} cmp $b->{name} } @{ $json->{queues}}) {
    }   
    
 $workbook->close();
-
-# Some old stuff to be removed
-	# foreach my $key (keys %$p) {
-	
-		# my $array_num = 0;
-		# print  "$p->{'users'}[$array_num]{name}\n";
-		# $array_num++;
-		# print "$key: \n";
-	# }	
