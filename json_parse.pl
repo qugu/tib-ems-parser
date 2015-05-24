@@ -5,14 +5,20 @@ use Data::Dumper;
 use JSON::Parse ':all';
 use Excel::Writer::XLSX;
 
-# JSON to perl conversion
-my $json = json_file_to_perl ('tibemsd.json');
+# Check for command line arguments before running
+my $args_num = $#ARGV + 1;
+if ($args_num != 2 ) {
+	print "\nUsage: $0 file.json file.xlsx \n";
+	exit;
+		}
 
-# my $file_name = $json->{'server'};
-# print Dumper $file_name;
+my ($input_file, $result_file) = @ARGV;
+
+# JSON to perl conversion
+my $json = json_file_to_perl ($input_file);
 
 ## Create a new Excel workbook
-my $workbook = Excel::Writer::XLSX->new( "excel.xlsx" );
+my $workbook = Excel::Writer::XLSX->new($result_file);
 
 # Add formatting for the worksheet titles
 my $format1 = $workbook->add_format();
@@ -121,5 +127,4 @@ $workbook->close();
 		# print  "$p->{'users'}[$array_num]{name}\n";
 		# $array_num++;
 		# print "$key: \n";
-	# }
-	
+	# }	
