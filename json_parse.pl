@@ -3,7 +3,9 @@ use strict;
 use warnings;
 use Data::Dumper;
 use JSON::Parse ':all';
+
 use Excel::Writer::XLSX;
+use List::Compare;
 
 # Check for command line arguments before running
 my $args_num = $#ARGV + 1;
