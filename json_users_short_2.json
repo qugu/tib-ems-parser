@@ -1,0 +1,24 @@
+{
+
+	"users":	[{
+			"description":	"Administrator",
+			"name":	"admin",
+			"password":	"$sdfsdfgsdfgsdfg"
+		}, {
+			"description":	"Read only access",
+			"name":	"vadmin",
+			"password":	"$cvnvcnbcvnbcvnb"
+		}, {
+			"description":	"Fault tolerance connection",
+			"name":	"ems-plon1",
+			"password":	"$rtrtbtrrtyhrthrth"
+		}, {
+			"description":	null,
+			"name":	"QuikPublisher",
+			"password":	"$dfgdfgdfdfN"
+		}, {
+			"description":	null,
+			"name":	"DifferentSubscriber",
+			"password":	"$dergdffghfghfg"
+		}]
+}
